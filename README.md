@@ -1,7 +1,7 @@
 # 🕷 THE VOID CRAWLER
 
 <p align="center">
-  <img src="images/TheVoidCrawler.png" width="700"/>
+  <img src="images/TheVoidCrawler.png"/>
 </p>
 
 <p align="center">
