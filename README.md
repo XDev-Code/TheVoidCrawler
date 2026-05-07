@@ -12,7 +12,7 @@
 
 # What's this Project?
 
-The Void Crawler is a Python tiny project that interacts with [External APIs](#-api-list) to gain information about the target WebDomain.
+The Void Crawler is a Python tiny project that interacts with [External APIs](#api-list) to gain information about the target WebDomain.
 
 This toolkit is designed for:
 - 🌐 Web Recon
