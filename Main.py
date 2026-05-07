@@ -5,6 +5,7 @@ import sys
 import msvcrt
 from UnOfficialAPIs.SubDomainFinder import find_subdomains
 from UnOfficialAPIs.AdminPageFinder import GetAdminPage
+from UnOfficialAPIs.ExternalLinkFinder import ExternalLinkFinder, InternalLinkFinder
 
 Logo = """                                                                                        
                                   ▒▒                  ▒▒                                
@@ -48,11 +49,11 @@ Menu = """
     ▒▒██▒▒▒▒▒▒██▒▒██████▒▒██▒▒▒▒▒▒██▒▒                          
       ▒▒██▒▒▒▒▒▒██████████▒▒▒▒▒▒██▒▒             1. Find Subdomains               
         ▒▒██████████████████████▒▒               2. Find Admin Page               
-          ▒▒▒▒▒▒██████████▒▒▒▒▒▒                 3. Exit                                
-        ▒▒██████▒▒██████▒▒██████▒▒                              
-      ▒▒██▒▒▒▒▒▒██████████▒▒▒▒▒▒██▒▒             > CHOISEOFTHEUSER              
+          ▒▒▒▒▒▒██████████▒▒▒▒▒▒                 3. Find External Links                                
+        ▒▒██████▒▒██████▒▒██████▒▒               4. Href Finder
+      ▒▒██▒▒▒▒▒▒██████████▒▒▒▒▒▒██▒▒             0. Exit              
     ▒▒██▒▒▒▒▒▒██████████████▒▒▒▒▒▒██▒▒                          
-    ▒▒██▒▒▒▒██▒▒██████████▒▒██▒▒▒▒██▒▒                          
+    ▒▒██▒▒▒▒██▒▒██████████▒▒██▒▒▒▒██▒▒           > CHOISEOFTHEUSER               
   ▒▒██▒▒▒▒██▒▒████▒▒▒▒▒▒████▒▒██▒▒▒▒██▒▒                        
   ▒▒██▒▒▒▒██▒▒██████▒▒██████▒▒██▒▒▒▒██▒▒                        
   ▒▒██▒▒▒▒██▒▒██████▒▒██████▒▒██▒▒▒▒██▒▒                        
@@ -131,6 +132,21 @@ if __name__ == "__main__":
         safe_input("\nPress Enter...")
 
     elif Choise == "3":
+        domain = safe_input("Enter the domain to find external links: ")
+        # Prints it in a nice format (json format)
+        Links = ExternalLinkFinder(domain)
+        for link in Links:
+            print(link)
+        safe_input("\nPress Enter...")
+      
+    elif Choise == "4":
+        domain = safe_input("Enter the domain to find href links: ")
+        hrefs = InternalLinkFinder(domain)
+        for href in hrefs:
+            print(href)
+        safe_input("\nPress Enter...")
+
+    elif Choise == "0":
         print("Exiting...")
         time.sleep(1)
         exit()

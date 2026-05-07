@@ -28,7 +28,7 @@ This toolkit is designed for:
 - [x] ~~Admin Page Finder~~
 - [ ] Directories Finder
 - [ ] EndPoints Finder
-- [ ] External Links Finder
+- [x] ~~External Links Finder~~
 - [ ] Technology Detection
 - [ ] WordPress Discovery
 - [ ] Auto SQLInjection Tester
